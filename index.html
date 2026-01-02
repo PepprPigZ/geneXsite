@@ -3,65 +3,497 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gene X Peptides - Laboratory Grade Research Peptides</title>
+    <title>GeneX Lab - Bulk Research Materials for Professional Supply Chains</title>
+    <meta name="description" content="GeneX Lab provides consistent, laboratory-grade research compounds for qualified research, analytical, and distribution environments.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Landing Page Specific Styles */
+        
+        /* Hero Section */
+        .landing-hero-full {
+            background: var(--gradient-dark);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-3xl) var(--spacing-xl);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .landing-hero-full .hero-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(8, 145, 178, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(20, 184, 166, 0.1) 0%, transparent 40%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322d3ee' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        
+        .landing-hero-inner {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .landing-hero-inner h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: var(--spacing-lg);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+        
+        .landing-hero-inner .hero-subheadline {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-2xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        .hero-buttons-landing {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-outline {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-2xl);
+            border: 2px solid var(--color-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: var(--text-base);
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            background: var(--color-primary);
+            transform: translateY(-2px);
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: var(--spacing-3xl) var(--spacing-xl);
+            background: var(--color-bg-light);
+        }
+        
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .about-section h2 {
+            font-family: var(--font-heading);
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+        }
+        
+        .about-section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            margin: var(--spacing-md) auto 0;
+            border-radius: 2px;
+        }
+        
+        .about-content p {
+            color: var(--color-text-secondary);
+            font-size: var(--text-lg);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .disclaimer-box {
+            background: linear-gradient(135deg, rgba(8, 145, 178, 0.08) 0%, rgba(20, 184, 166, 0.08) 100%);
+            border-left: 4px solid var(--color-primary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .disclaimer-box p {
+            color: var(--color-text-primary);
+            font-weight: 500;
+            margin-bottom: 0;
+            font-size: var(--text-base);
+        }
+        
+        /* FAQ Section */
+        .faq-landing-section {
+            padding: var(--spacing-3xl) var(--spacing-xl);
+            background: var(--color-bg-card);
+        }
+        
+        .faq-landing-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-landing-section h2 {
+            font-family: var(--font-heading);
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-2xl);
+            text-align: center;
+        }
+        
+        .faq-landing-section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            margin: var(--spacing-md) auto 0;
+            border-radius: 2px;
+        }
+        
+        .faq-category {
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .faq-category h3 {
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--color-border);
+        }
+        
+        .faq-item-landing {
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .faq-item-landing:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .faq-item-landing h4 {
+            font-family: var(--font-heading);
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .faq-item-landing p {
+            color: var(--color-text-secondary);
+            font-size: var(--text-base);
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: var(--spacing-3xl) var(--spacing-xl);
+            background: var(--gradient-dark);
+            position: relative;
+        }
+        
+        .contact-section .hero-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 80% 50%, rgba(8, 145, 178, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-section h2 {
+            font-family: var(--font-heading);
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .contact-section p {
+            color: var(--color-text-light);
+            font-size: var(--text-lg);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .contact-note {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            font-style: italic;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .landing-hero-full {
+                min-height: auto;
+                padding: var(--spacing-3xl) var(--spacing-lg);
+            }
+            
+            .about-section,
+            .faq-landing-section,
+            .contact-section {
+                padding: var(--spacing-2xl) var(--spacing-lg);
+            }
+            
+            .hero-buttons-landing {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons-landing .hero-cta,
+            .hero-buttons-landing .btn-outline {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-buttons .hero-cta,
+            .contact-buttons .hero-whatsapp {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <span class="logo-icon-genex">G</span>
-                <span class="logo-text" id="storeName">Gene X Peptides</span>
+                <span class="logo-text">GeneX Lab</span>
             </a>
             <div class="nav-links">
+                <a href="index.html">Home</a>
                 <a href="store.html">Store</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1 id="heroTitle">Laboratory Grade Research Peptides</h1>
-            <p class="hero-subtitle">99%+ purity, third-party tested. Trusted by research institutions worldwide.</p>
-            <div class="hero-buttons">
-                <a href="store.html" class="hero-cta">Browse Peptides</a>
+    <!-- Hero Section -->
+    <header class="landing-hero-full">
+        <div class="hero-pattern"></div>
+        <div class="landing-hero-inner">
+            <h1>Bulk Research Materials for Professional Supply Chains</h1>
+            <p class="hero-subheadline">GeneX Lab provides consistent, laboratory-grade research compounds for qualified research, analytical, and distribution environments.</p>
+            <div class="hero-buttons-landing">
+                <a href="store.html" class="hero-cta">Browse Products</a>
+                <a href="#contact" class="btn-outline">Get In Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <h2>Who We Are</h2>
+            <div class="about-content">
+                <p>GeneX Lab is an independent laboratory supply group focused on the sourcing and structured distribution of research grade compounds.</p>
+                
+                <p>We operate with an emphasis on continuity, batch consistency, and repeat availability, supporting partners who require dependable long-term supply rather than consumer level access.</p>
+                
+                <p>Our model is built around bulk procurement, private distribution, and professional handling standards.</p>
+                
+                <p>We work exclusively with experienced research professionals, laboratories, clinics, and distribution partners who understand appropriate handling, documentation, and procurement processes. Minimum order thresholds may apply.</p>
+                
+                <div class="disclaimer-box">
+                    <p>All materials are supplied strictly for laboratory research and analytical purposes only. Not for human or veterinary use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-landing-section" id="faq">
+        <div class="faq-landing-container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <!-- General Questions -->
+            <div class="faq-category">
+                <h3>General</h3>
+                
+                <div class="faq-item-landing">
+                    <h4>What does GeneX Lab supply?</h4>
+                    <p>GeneX Lab provides laboratory grade research materials intended for analytical, development, and professional research environments. We operate as a supply partner rather than a consumer retail brand.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>Do you sell to individuals or first-time buyers?</h4>
+                    <p>Our operation is structured around professional supply relationships. Access is reviewed on a case-by-case basis to ensure suitability.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>How does access work?</h4>
+                    <p>Initial contact allows us to understand your requirements and operating environment. Where appropriate, current availability information can then be shared for reference.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>Is there a minimum order requirement?</h4>
+                    <p>Yes. Minimum order thresholds may apply depending on the materials and supply requirements involved.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>Do you have a public price list?</h4>
+                    <p>No. Availability and pricing are not published publicly and are shared privately once access has been confirmed.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>How is availability determined?</h4>
+                    <p>Availability is based on current production cycles and supply continuity. We prioritise repeat and long-term supply arrangements wherever possible.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>Are your materials for medical or human use?</h4>
+                    <p>No. All materials supplied by GeneX Lab are intended strictly for laboratory research and analytical purposes only and are not for human or veterinary use.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>Can you advise on usage or applications?</h4>
+                    <p>We do not provide guidance on application or use. Our role is limited to supply and availability of research materials.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>How do I get started?</h4>
+                    <p>To begin, please contact our team and briefly outline your operating environment and supply requirements. GeneX Lab reserves the right to decline access where requirements or operating conditions are not aligned with our supply model.</p>
+                </div>
+            </div>
+            
+            <!-- Shipping Questions -->
+            <div class="faq-category">
+                <h3>Shipping & Delivery</h3>
+                
+                <div class="faq-item-landing">
+                    <h4>Do you ship internationally?</h4>
+                    <p>Yes we support shipping. Details are discussed privately after initial contact.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>What is the typical dispatch and delivery timeframe?</h4>
+                    <p>Once an order is confirmed and prepared, typical international delivery timeframes range between 10–14 business days, depending on destination, carrier, and customs processing. Please note that delivery times are estimates and may vary due to external factors beyond our control.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>Is tracking provided?</h4>
+                    <p>Shipment tracking information is provided following dispatch.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>How are materials packaged?</h4>
+                    <p>All materials are packaged professionally and discreetly in accordance with standard laboratory shipping practices.</p>
+                </div>
+            </div>
+            
+            <!-- Payments & Refunds -->
+            <div class="faq-category">
+                <h3>Payments & Refunds</h3>
+                
+                <div class="faq-item-landing">
+                    <h4>What payment methods do you accept?</h4>
+                    <p>Payments are processed securely through approved payment platforms. Payment details are provided following order confirmation.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>What is your refund policy?</h4>
+                    <p>Refunds may be issued for orders that are incorrect or damaged upon arrival, provided the issue is reported within 48 hours of delivery. Claims are reviewed on a case by case basis in line with our processing and fulfilment standards.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>Are refunds available once an order has been dispatched?</h4>
+                    <p>Once an order has been dispatched, refunds are not available except in cases of verified error or damage.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>What happens if a shipment is delayed?</h4>
+                    <p>Delivery timelines are estimates and may be affected by customs processing or carrier delays. We work with fulfilment partners to monitor shipments and assist where possible.</p>
+                </div>
+                
+                <div class="faq-item-landing">
+                    <h4>Why isn't pricing or availability listed publicly?</h4>
+                    <p>GeneX Lab operates on a private availability basis rather than a public retail model. Availability and pricing are shared privately following an initial review of requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="hero-pattern"></div>
+        <div class="contact-container">
+            <h2>Get In Touch</h2>
+            <p>To begin, please contact our team and briefly outline your operating environment and supply requirements. We will review your enquiry and respond where appropriate.</p>
+            <div class="contact-buttons">
                 <a href="https://api.whatsapp.com/send?phone=6664798419" target="_blank" class="hero-whatsapp">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
-                    Chat on WhatsApp
+                    Contact via WhatsApp
                 </a>
             </div>
+            <p class="contact-note">GeneX Lab reserves the right to decline access where requirements or operating conditions are not aligned with our supply model.</p>
         </div>
-        <div class="hero-pattern"></div>
-    </header>
+    </section>
 
-    <main class="container" id="products">
-        <div class="section-header">
-            <h2>Featured Products</h2>
-            <p>Premium research compounds with verified purity documentation</p>
-        </div>
-        <div class="products-grid" id="productsContainer">
-            <!-- Products will be loaded from config.js -->
-        </div>
-    </main>
-
-    <footer id="contact">
+    <!-- Footer -->
+    <footer>
         <div class="footer-content">
             <div class="footer-brand">
                 <span class="logo-icon-genex footer-logo">G</span>
-                <span>Gene X Peptides</span>
+                <span>GeneX Lab</span>
             </div>
-            <p>© 2024 Gene X Peptides. All rights reserved.</p>
-            <p class="footer-note">For research and laboratory use only. Not for human consumption.</p>
+            <p>© 2024 GeneX Lab. All rights reserved.</p>
+            <p class="footer-note">All materials are supplied strictly for laboratory research and analytical purposes only. Not for human or veterinary use.</p>
         </div>
     </footer>
-
-    <script src="config.js"></script>
-    <script src="js/store.js"></script>
 </body>
 </html>

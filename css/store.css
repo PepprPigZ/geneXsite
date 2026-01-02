@@ -39,6 +39,23 @@
     font-weight: 500;
 }
 
+.store-nav-links {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.store-nav-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--text-sm);
+    transition: color 0.2s;
+}
+
+.store-nav-links a:hover {
+    color: var(--color-primary);
+}
+
 /* Store Hero */
 .store-hero {
     background: var(--gradient-dark);
@@ -445,6 +462,10 @@
 @media (max-width: 768px) {
     .nav-trust {
         display: none;
+    }
+    
+    .store-nav-links {
+        gap: var(--spacing-md);
     }
     
     .hero-stats {

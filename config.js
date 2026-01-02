@@ -3,8 +3,8 @@
 
 const STORE_CONFIG = {
   // Store Info
-  storeName: 'MedLab Supplies',
-  storeTagline: 'Professional Laboratory & Medical Equipment',
+  storeName: 'GeneX Lab',
+  storeTagline: 'Bulk Research Materials for Professional Supply Chains',
 
   // Your products
   products: [
