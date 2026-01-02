@@ -1,0 +1,25 @@
+# Netlify Configuration
+# This file tells Netlify how to build and deploy your site
+
+[build]
+  # No build command needed for static site
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  # Use Node.js for functions
+  node_bundler = "esbuild"
+
+# Redirect for local development (optional)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+

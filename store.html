@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory Grade Peptides - Research Quality Compounds | MedLab Supplies</title>
+    <meta name="description" content="Premium laboratory grade peptides for research. 99%+ purity, third-party tested, fast shipping. Trusted by leading research institutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/store.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body class="store-page">
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        <span>🔬 Limited Stock Alert:</span> Due to high demand, some peptides may sell out. Order now to secure your supply.
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar store-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚕</span>
+                <span class="logo-text">MedLab Supplies</span>
+            </a>
+            <div class="nav-right">
+                <div class="nav-trust">
+                    <span class="trust-item">✓ 99%+ Purity</span>
+                    <span class="trust-item">✓ Third-Party Tested</span>
+                </div>
+                <button class="cart-button" onclick="Cart.openCart()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    Cart
+                    <span id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div id="cartOverlay" onclick="Cart.closeCart()"></div>
+    <aside id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="cart-close" onclick="Cart.closeCart()">×</button>
+        </div>
+        <div id="cartItems">
+            <!-- Cart items populated by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button id="checkoutBtn" onclick="Cart.checkout()" disabled>
+                Checkout
+            </button>
+        </div>
+    </aside>
+
+    <!-- Hero Section -->
+    <section class="store-hero">
+        <div class="hero-pattern"></div>
+        <div class="store-hero-content">
+            <div class="hero-badge">FOR RESEARCH USE ONLY</div>
+            <h1>Laboratory Grade Peptides</h1>
+            <p class="hero-lead">Premium research compounds trusted by universities and institutions worldwide. Every batch independently verified for purity and potency.</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">99%+</span>
+                    <span class="stat-label">Purity Guaranteed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">48hr</span>
+                    <span class="stat-label">Express Shipping</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Orders Fulfilled</span>
+                </div>
+            </div>
+            
+            <a href="#products" class="hero-cta pulse">View Available Peptides</a>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-badge-card">
+                    <div class="badge-icon">🔬</div>
+                    <h3>HPLC Verified</h3>
+                    <p>Every batch tested via High-Performance Liquid Chromatography</p>
+                </div>
+                <div class="trust-badge-card">
+                    <div class="badge-icon">📋</div>
+                    <h3>COA Included</h3>
+                    <p>Certificate of Analysis provided with every order</p>
+                </div>
+                <div class="trust-badge-card">
+                    <div class="badge-icon">❄️</div>
+                    <h3>Cold Chain Shipping</h3>
+                    <p>Temperature-controlled packaging maintains integrity</p>
+                </div>
+                <div class="trust-badge-card">
+                    <div class="badge-icon">🛡️</div>
+                    <h3>Quality Guarantee</h3>
+                    <p>Full refund if purity doesn't match specifications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="store-products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Available Peptides</h2>
+                <p>Research-grade compounds with verified purity documentation</p>
+            </div>
+            
+            <div class="store-grid" id="productsGrid">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Researchers</h2>
+                <p>What our customers say about our peptides</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Exceptional purity. The COA matched our independent analysis perfectly. Will order again."</p>
+                    <div class="testimonial-author">
+                        <strong>Dr. M. Chen</strong>
+                        <span>Research Institute</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Fast shipping and excellent packaging. The cold chain shipping kept everything stable."</p>
+                    <div class="testimonial-author">
+                        <strong>K. Williams</strong>
+                        <span>University Lab</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p>"Best quality-to-price ratio I've found. Consistent results across multiple batches."</p>
+                    <div class="testimonial-author">
+                        <strong>Dr. R. Patel</strong>
+                        <span>Biotech Company</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What purity level are your peptides?</h3>
+                    <p>All our peptides are minimum 99% pure, verified by HPLC testing. Each order includes a Certificate of Analysis.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How are peptides shipped?</h3>
+                    <p>We use cold chain shipping with ice packs and insulated packaging to maintain product integrity during transit.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are these for human use?</h3>
+                    <p>No. Our peptides are sold strictly for laboratory research purposes only. Not for human consumption.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What payment methods do you accept?</h3>
+                    <p>We accept all major credit cards through our secure Stripe payment processing system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Order?</h2>
+                <p>Get premium research-grade peptides with verified purity and fast shipping.</p>
+                <a href="#products" class="hero-cta">Browse Peptides</a>
+                <p class="cta-subtext">Questions? <a href="https://api.whatsapp.com/send?phone=6664798419" target="_blank">Chat with us on WhatsApp</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">⚕</span>
+                <span>MedLab Supplies</span>
+            </div>
+            <p>© 2024 MedLab Supplies. All rights reserved.</p>
+            <p class="footer-note">All products are sold for laboratory research use only. Not for human consumption.</p>
+        </div>
+    </footer>
+
+    <!-- Product Data & Scripts -->
+    <script>
+        // Product catalog - All products using test Price ID for now
+        const PRODUCTS = [
+            { id: 'ipamorelin', name: 'Ipamorelin', price: '$49.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.1%', badge: 'bestseller', shortDesc: 'A selective growth hormone–releasing peptide studied for clean GH signaling.', longDesc: 'Ipamorelin is a growth hormone–releasing peptide (GHRP) researched for its ability to stimulate growth hormone secretion with minimal impact on cortisol and prolactin.' },
+            { id: 'cjc1295', name: 'CJC-1295', price: '$54.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.3%', badge: 'popular', shortDesc: 'A long-acting GHRH analogue researched for sustained GH release.', longDesc: 'CJC-1295 is an analogue of growth hormone–releasing hormone (GHRH) designed to increase the amplitude and duration of growth hormone pulses.' },
+            { id: 'ghrp6', name: 'GHRP-6', price: '$39.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.0%', badge: null, shortDesc: 'A potent GH-releasing peptide known for strong appetite signaling.', longDesc: 'GHRP-6 is a growth hormone–releasing peptide studied for robust GH stimulation and its interaction with ghrelin receptors.' },
+            { id: 'nad', name: 'NAD+', price: '$79.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.5%', badge: 'new', shortDesc: 'A central coenzyme involved in cellular energy and metabolism.', longDesc: 'NAD+ (nicotinamide adenine dinucleotide) is a vital coenzyme present in all living cells, playing a key role in mitochondrial function and energy production.' },
+            { id: 'motsc', name: 'MOTS-c', price: '$89.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.2%', badge: null, shortDesc: 'A mitochondria-derived peptide studied in metabolic regulation.', longDesc: 'MOTS-c is a peptide encoded by mitochondrial DNA and studied for its role in metabolic homeostasis and cellular stress responses.' },
+            { id: 'thymosin', name: 'Thymosin Alpha-1', price: '$64.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.4%', badge: 'popular', shortDesc: 'A peptide researched for immune system signaling and modulation.', longDesc: 'Thymosin Alpha-1 is a naturally occurring peptide studied extensively for its role in immune signaling pathways.' },
+            { id: 'tesamorelin', name: 'Tesamorelin', price: '$74.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.1%', badge: null, shortDesc: 'A GHRH analogue studied for GH and metabolic signaling.', longDesc: 'Tesamorelin is a synthetic growth hormone–releasing hormone analogue researched for its effects on GH secretion and downstream metabolic processes.' },
+            { id: 'aod9604', name: 'AOD-9604', price: '$44.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.0%', badge: null, shortDesc: 'A modified GH fragment studied in fat metabolism research.', longDesc: 'AOD-9604 is a peptide fragment derived from human growth hormone, specifically studied for its role in lipid metabolism.' },
+            { id: 'selank', name: 'Selank', price: '$54.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.3%', badge: null, shortDesc: 'A neuroactive peptide studied for stress and mood regulation.', longDesc: 'Selank is a synthetic peptide derived from tuftsin and researched for its influence on stress response and emotional regulation.' },
+            { id: 'semax', name: 'Semax', price: '$59.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.2%', badge: null, shortDesc: 'A neuropeptide researched for cognition and neuroprotection.', longDesc: 'Semax is a synthetic neuroactive peptide studied for its effects on cognitive function, brain signaling, and neuroprotective pathways.' },
+            { id: 'ghkcu', name: 'GHK-Cu', price: '$39.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.1%', badge: 'bestseller', shortDesc: 'A copper peptide studied for skin and tissue signaling.', longDesc: 'GHK-Cu is a naturally occurring copper-binding peptide researched for its role in skin biology, tissue remodeling, and cellular repair signaling.' },
+            { id: 'bpc157', name: 'BPC-157', price: '$49.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.2%', badge: 'bestseller', shortDesc: 'A gastric-derived peptide researched for tissue integrity.', longDesc: 'BPC-157 is a peptide derived from a protective protein found in gastric juice. Research commonly examines its role in tissue repair signaling.' },
+            { id: 'tb500', name: 'TB-500', price: '$54.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.4%', badge: 'popular', shortDesc: 'A thymosin beta-4 analogue studied for cellular repair signaling.', longDesc: 'TB-500 is a synthetic version of thymosin beta-4 researched for its influence on cell migration and tissue organization.' },
+            { id: 'igf1', name: 'IGF-1', price: '$94.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.3%', badge: null, shortDesc: 'A key growth factor involved in cellular growth and repair.', longDesc: 'Insulin-like Growth Factor 1 (IGF-1) is a naturally occurring growth factor central to cell growth, development, and metabolism.' },
+            { id: 'hexarelin', name: 'Hexarelin', price: '$44.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.0%', badge: null, shortDesc: 'A potent GH-releasing peptide studied in endocrine research.', longDesc: 'Hexarelin is a synthetic growth hormone–releasing peptide studied for strong GH stimulation and cardiovascular-related signaling pathways.' },
+            { id: 'kisspeptin', name: 'Kisspeptin', price: '$69.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.1%', badge: null, shortDesc: 'A peptide hormone studied for reproductive signaling.', longDesc: 'Kisspeptin is a peptide hormone researched for its central role in regulating reproductive hormone release.' },
+            { id: 'retatrutide', name: 'Retatrutide', price: '$129.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.2%', badge: 'new', shortDesc: 'A multi-receptor agonist researched for metabolic regulation.', longDesc: 'Retatrutide is a novel peptide studied for its combined activity at GLP-1, GIP, and glucagon receptors.' },
+            { id: 'amino1mq', name: '5-Amino-1MQ', price: '$84.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.4%', badge: 'new', shortDesc: 'A small-molecule compound studied in cellular metabolism research.', longDesc: '5-Amino-1MQ is a small-molecule compound researched for its inhibition of NNMT and downstream effects on cellular metabolism.' },
+            { id: 'glow', name: 'Glow', price: '$59.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.0%', badge: null, shortDesc: 'A blended peptide formulation researched for skin biology.', longDesc: 'Glow is a blended peptide formulation typically researched in cosmetic and dermatological contexts for skin quality and tissue signaling.' },
+            { id: 'ghrp2', name: 'GHRP-2', price: '$42.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.1%', badge: null, shortDesc: 'A GH-releasing peptide with strong endocrine activity.', longDesc: 'GHRP-2 is a growth hormone–releasing peptide studied for its potent stimulation of GH secretion with less pronounced appetite signaling.' },
+            { id: 'glp1', name: 'GLP-1', price: '$99.99', priceId: 'price_1SeslpFxFxmlm2plZLMNvGNk', purity: '99.3%', badge: 'popular', shortDesc: 'An incretin hormone involved in glucose and appetite signaling.', longDesc: 'Glucagon-like peptide-1 (GLP-1) is an incretin hormone studied for its role in glucose metabolism, insulin regulation, and appetite signaling.' }
+        ];
+
+        // Render products
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            if (!grid) return;
+
+            grid.innerHTML = PRODUCTS.map(product => `
+                <div class="product-card-store">
+                    ${product.badge ? `<div class="product-badge ${product.badge}">${product.badge === 'bestseller' ? 'Bestseller' : product.badge === 'popular' ? 'Popular' : 'New'}</div>` : ''}
+                    <div class="product-header">
+                        <h3>${product.name}</h3>
+                        <span class="product-purity">${product.purity} Pure</span>
+                    </div>
+                    <p class="product-desc">${product.shortDesc}</p>
+                    <p class="product-long-desc">${product.longDesc}</p>
+                    <div class="product-footer">
+                        <span class="product-price">${product.price}</span>
+                        <button class="buy-button" onclick='Cart.addItem(${JSON.stringify(product)})'>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', renderProducts);
+    </script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

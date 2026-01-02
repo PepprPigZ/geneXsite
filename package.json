@@ -1,0 +1,8 @@
+{
+  "name": "medlab-supplies",
+  "version": "1.0.0",
+  "description": "MedLab Supplies - Laboratory Grade Peptides Store",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}
