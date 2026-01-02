@@ -1,8 +1,6 @@
 // Netlify Function: Create Stripe Checkout Session
 // This function receives cart items and creates a Stripe Checkout session
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-
 exports.handler = async (event, context) => {
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
@@ -11,6 +9,20 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({ error: 'Method not allowed' }),
     };
   }
+
+  // Check if secret key is configured
+  if (!process.env.STRIPE_SECRET_KEY) {
+    console.error('STRIPE_SECRET_KEY environment variable is not set');
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ 
+        error: 'Payment system not configured. Please contact support.' 
+      }),
+    };
+  }
+
+  // Initialize Stripe with the secret key
+  const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
   try {
     const { items } = JSON.parse(event.body);
@@ -39,10 +51,6 @@ exports.handler = async (event, context) => {
       mode: 'payment',
       success_url: `${siteUrl}/success.html?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/store.html`,
-      // Optional: collect shipping address
-      // shipping_address_collection: {
-      //   allowed_countries: ['US', 'CA', 'GB', 'AU'],
-      // },
     });
 
     return {
@@ -60,4 +68,3 @@ exports.handler = async (event, context) => {
     };
   }
 };
-

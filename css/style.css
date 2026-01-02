@@ -1,5 +1,5 @@
 /* ============================================
-   MEDLAB SUPPLIES - MAIN STYLESHEET
+   GENE X PEPTIDES - MAIN STYLESHEET
    ============================================
    
    HOW TO CUSTOMIZE:
@@ -14,13 +14,14 @@
 
 :root {
     /* -------- PRIMARY COLORS -------- */
-    /* Main brand color - used for buttons, links, accents */
+    /* Main brand color - used for buttons, links, accents (Gene X teal) */
     --color-primary: #0891b2;
     --color-primary-dark: #0e7490;
     --color-primary-light: #22d3ee;
     
-    /* Secondary/accent color */
-    --color-accent: #14b8a6;
+    /* Secondary/accent color (Gene X orange) */
+    --color-accent: #f97316;
+    --color-accent-light: #fb923c;
     
     /* -------- BACKGROUND COLORS -------- */
     --color-bg-dark: #0f172a;
@@ -129,7 +130,7 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-sm);
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 1.4rem;
@@ -137,9 +138,62 @@ body {
     text-decoration: none;
 }
 
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
 .logo-icon {
     font-size: 1.8rem;
     color: var(--color-primary);
+}
+
+/* Gene X Logo Icon - Circular G with maze-like border */
+.logo-icon-genex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #06b6d4 100%);
+    border-radius: 50%;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: white;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.logo-icon-genex::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent);
+    border-top-color: transparent;
+    border-left-color: transparent;
+}
+
+.logo-icon-genex.footer-logo {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+}
+
+.logo-icon-genex.footer-logo::before {
+    inset: -2px;
+}
+
+.logo-icon-genex.landing-logo {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+}
+
+.logo-icon-genex.landing-logo::before {
+    inset: -4px;
+    border-width: 3px;
 }
 
 .nav-links {
